@@ -1,0 +1,25 @@
+footer{
+    height: 100px;
+    padding: 20px;
+}
+
+footer i {
+    font-size: 20px;
+}
+
+#social-icons-container {
+    padding: 25px;
+}
+
+#social-icons-container div {
+    text-align: center;
+}
+
+footer p {
+    text-align: center;
+    margin: 10px;
+}
+
+a:hover i{
+    color: greenyellow;
+}

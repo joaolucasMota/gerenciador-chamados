@@ -1,0 +1,45 @@
+#header{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#logo-container{
+    display: flex;
+    justify-content: center;
+}
+/*Problema relacionado ao logo de login que ficava deslocando conforma passava o mouse*/
+#logo-login{
+    vertical-align: super;
+}
+
+/*login*/
+
+#form-container{
+    padding: 30px;
+}
+
+#btn-login{
+    margin-bottom: 10px;
+}
+
+#link-container{
+    margin-top: 10px;
+}
+
+#form-container{
+    border-radius: 5px;
+    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.196);
+    background-color: greenyellow;
+}
+
+#form-container .form-control{
+    border: none;
+    border-bottom: 1px solid;
+}
+
+#form-container .form-control:focus{
+    box-shadow: none;
+}
+#btn-login:focus{
+    box-shadow: none;
+}
