@@ -1,10 +1,10 @@
-import './login.css'
-import Imagen from "../../assets/login.svg"
-import { useState, useContext } from 'react'
-import { Link } from 'react-router-dom'
-import Header from '../../components/Header'
-import Footer from "../../components/Footer"
-import { AuthContext } from '../../contexts/auth'
+import './login.css';
+import Imagen from "../../assets/login.svg";
+import { useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
+import Footer from "../../components/Footer";
+import { AuthContext } from '../../contexts/auth';
+import {toast} from 'react-toastify';
 
 
 
@@ -19,6 +19,10 @@ export default function Login(){
     function handleLogin(e){
         e.preventDefault();
         
+        if(email ==='' || password ===''){
+            toast.warn('Esta faltando email ou senha')
+        }
+
         if(email !== '' && password !== ''){
           login(email, password)
         }
@@ -27,7 +31,7 @@ export default function Login(){
       }
     return(
         <div>
-            <header className="container">
+            <header>
                     <div className="row" id="header">
                         <div id="logo-container">                      
                             <h1 className='display-1'>Gerenciador de chamados</h1>
@@ -66,7 +70,7 @@ export default function Login(){
 
                                     <label type='password' className='form-label'>Digite sua senha</label>
                                 </div>
-                                <input className='btn btn-dark' type='submit' value='Entrar' id='btn-login'/>
+                                <input className='btn btn-dark' type='submit' value={loadingAuth ? 'Carregando...' : 'Entrar'} id='btn-login'/>
                             </form>
                             <div className='col-12' id='link-container'>
                                 <Link to="/register">Ainda não possui cadastro? clique aqui</Link>

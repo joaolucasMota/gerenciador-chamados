@@ -1,0 +1,73 @@
+.container-fluid.container-perfil{
+    background-color: var(--Primaria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0px;
+    border-radius: 5px;
+    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.196);
+}
+.label-avatar{
+    width: 280px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+.label-avatar input{
+    display: none;
+}
+
+.label-avatar span{
+    z-index: 99;
+    position: absolute;
+    transition: all .5s;
+}
+.label-avatar span:hover{
+    opacity: 2.0;
+    transform: scale(1.4);
+}
+.label-avatar span i{
+    color: rgba(0, 0, 0, 0.392);
+    font-size: 4em;
+}
+.label-avatar span i:hover{
+    color: rgba(240, 248, 255, 0.672);
+}
+.input-group{
+    padding: 10px
+}
+.form-profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.form-profile img{
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.196);
+}
+.form-control{
+    border: 0;
+}
+.form-control:focus{
+    box-shadow: none;
+}
+#basic-addon1{
+    background: var(--Secundaria);
+}
+.container-sair{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Secundaria);
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.196);
+}
+.btn:focus{
+    box-shadow: none;
+}

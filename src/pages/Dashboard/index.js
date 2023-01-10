@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/auth";
-import { auth } from "../../services/firebaseConnection";
+import Header from "../../components/Header";
+import Title from "../../components/Title";
 
 
 
@@ -11,7 +12,24 @@ export default function Dashboard(){
 
     return(
         <div>
-            <h1>asfdsadsgsdhdsh</h1>
+            <Header/>
+
+            <div>
+                <Title name='Dashboard'>
+                <i className="bi bi-house-fill"></i>
+                </Title>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
             <button onClick={ () => deslog() } className='btn-sm btn-dark btn-home' id="btn-sair" >Sair</button>
         </div>
     )

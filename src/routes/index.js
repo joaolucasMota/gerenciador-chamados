@@ -5,6 +5,8 @@ import Dashboard from '../pages/Dashboard';
 import Registro from "../pages/Registro"
 import Private from './Private';
 import NoPrivate from './NoPrivate'
+import Setup from '../pages/Setup';
+import Clientes from '../pages/Clientes';
 
 
 export default function RoutesApp(){
@@ -13,8 +15,10 @@ export default function RoutesApp(){
     return(
         <Routes>
                 <Route path='/' element={<NoPrivate> <Login/> </NoPrivate>}/>
-                <Route path='/register' element={<NoPrivate> <Registro/> </NoPrivate>} />
+                <Route path='/register' element={<NoPrivate> <Registro/> </NoPrivate>}/>
                 <Route path='/dashboard' element={<Private> <Dashboard/> </Private>}/>
+                <Route path='/setup' element={<Private> <Setup/> </Private>}/>
+                <Route path='/clientes' element={<Private> <Clientes/> </Private>}/>
         </Routes>
     )
 }

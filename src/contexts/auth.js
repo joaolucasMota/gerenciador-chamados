@@ -3,6 +3,7 @@ import { auth, db } from "../services/firebaseConnection";
 import { onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword,signOut } from "firebase/auth";
 import { Navigate, useNavigate } from "react-router-dom";
 import { doc, getDoc, setDoc } from "firebase/firestore";
+import {toast} from 'react-toastify';
 
 export const AuthContext = createContext({});
 
@@ -54,12 +55,12 @@ export default function AuthProvider({children}){
       setUser(data);
       storageUser(data);
       setLoadingAuth(false);
-      alert('Bem vindo de volta!');
+      toast.success('Bem vindo de volta!');
       
     })
     .catch((error)=>{
       console.log(error);
-      alert('Ops algo deu errado!');
+      toast.warn('Ops algo deu errado!');
       setLoadingAuth(false);
     })
 
@@ -90,14 +91,14 @@ export default function AuthProvider({children}){
             setUser(data);
             storageUser(data);
             setLoadingAuth(false);
-            alert('Bem vindo a plataforma!');
+            toast.success('Bem vindo a plataforma!');
     
           })
     
         })
         .catch((error)=>{
           console.log(error);
-          alert('Ops algo deu errado!');
+          toast.warn('Ops algo deu errado!');
           setLoadingAuth(false);
         })
     
@@ -118,7 +119,7 @@ export default function AuthProvider({children}){
       }
 
     return(
-        <AuthContext.Provider value={{signed: !!user, user,registro, login, deslog}}>
+        <AuthContext.Provider value={{signed: !!user, user,registro, login, deslog, setUser, storageUser, loadingAuth}}>
             {children}
         </AuthContext.Provider>
     )

@@ -1,0 +1,14 @@
+.form-control.input-clientes{
+    max-width: 350px;
+    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.196);
+}
+@media screen and (max-width:991px){
+    .label-clientes{
+        font-size: 1.4em;
+    }
+}
+@media screen and (max-width:480px){
+    .label-clientes{
+        font-size: 1em;
+    }
+}

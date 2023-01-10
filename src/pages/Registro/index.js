@@ -1,10 +1,10 @@
-import './registro.css'
-import Imagen from "../../assets/registro.svg"
-import { useState,useContext } from 'react'
-import { Link } from 'react-router-dom'
-import Header from '../../components/Header'
-import Footer from "../../components/Footer"
+import './registro.css';
+import Imagen from "../../assets/registro.svg";
+import { useState,useContext } from 'react';
+import { Link } from 'react-router-dom';
+import Footer from "../../components/Footer";
 import { AuthContext } from '../../contexts/auth'
+import {toast} from 'react-toastify';
 
 
 
@@ -19,6 +19,10 @@ export default function Registro() {
   
     function handleSubmit(e){
       e.preventDefault();
+
+      if(email ==='' || password ==='' || nome===''){
+        toast.warn('Preencha todos os campos')
+    }
       
       if(nome !== '' && email !== '' && password !== ''){
         registro(email, password, nome)
@@ -27,7 +31,7 @@ export default function Registro() {
     }
     return(
         <div>
-            <header className="container">
+            <header>
                 <div className="row" id="header">
                     <div id="logo-container">                      
                         <h1 className='display-1'>Gerenciador de chamados</h1>
@@ -80,7 +84,7 @@ export default function Registro() {
 
                                     <label type='password' className='form-label'>Digite sua senha</label>
                                 </div>
-                                <input className='btn btn-dark' type='submit' value='Cadastrar' id='btn-register'/>
+                                <input className='btn btn-dark' type='submit' value={loadingAuth ? 'Carregando...' : 'Cadastrar'} id='btn-register'/>
                             </form>
                             <div className='col-12' id='link-container'>
                                 <Link to="/">Já possui cadastro? clique aqui</Link>

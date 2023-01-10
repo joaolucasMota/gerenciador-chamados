@@ -1,0 +1,83 @@
+@media screen and (min-width:992px){
+
+    #header-foto{
+        max-width: 150px;
+        margin-top: 10px;
+        margin-bottom: 20px; 
+        border-radius: 50%;
+        object-fit: cover;
+        height: 150px;
+        width: 150px;
+        box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.196);
+    }
+    .navbar .fluid-container, .navbar-expand-lg .navbar-collapse, .navbar-expand-lg .navbar-nav {
+        font-size: larger;
+        display: block;
+    }
+    .navbar{
+        width: 240px;
+        height: 100vh;
+        align-items: flex-start;
+        position: fixed;
+        
+    } 
+    .content{
+        margin-left: 250px;
+        margin-bottom: 0;
+    } 
+}
+
+/*só será renderizado com tela grande*/
+@media screen and (max-width:991px){
+    #header-foto{
+        display: none;
+    }
+
+    .content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+}
+/*.contente é a classe do container do title*/
+.content{
+    padding-top: 15px;
+    margin-bottom: -5px;
+}
+
+.navbar .fluid-container, .navbar-expand-lg .navbar-collapse, .navbar-expand-lg .navbar-nav {
+    flex-direction: column;
+    font-size: medium;
+    font-weight: bold;
+}
+.navbar{
+    background-color: var(--Primaria);
+    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.196);
+}
+
+.navbar-light .navbar-nav .nav-item{
+    transition: ease-in-out .5s;
+    margin-bottom: 5px;
+}
+.navbar-light .navbar-nav .nav-item:hover{
+    background-color: var(--Secundaria);
+    border-radius: 5px;
+}
+
+
+.navbar-light .navbar-toggler{
+    color: black;
+    border: 2px solid black;
+}
+
+
+
+.navbar-light .navbar-toggler:focus{
+    border: none;
+}
+
+.navbar .fluid-container, .navbar-expand-lg .navbar-collapse, .navbar-expand-lg .navbar-nav{
+    margin-top: 5px;
+    align-items: center;
+}
