@@ -1,0 +1,33 @@
+.container-fluid.container-new{
+    background-color: var(--Primaria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0px;
+    border-radius: 5px;
+    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.196);
+}
+
+.select-new{
+    cursor: pointer;
+    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.196);
+}
+
+@media screen and (min-width:992px){
+    .select-new{
+        width: 600px;
+    }
+}
+
+.select-new:focus{
+    box-shadow: none;
+}
+.container-status{
+    display: flex;
+}
+.form-check{
+    margin-left: 10px;
+}
+.text-new{
+    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.196);
+}

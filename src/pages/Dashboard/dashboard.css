@@ -1,0 +1,26 @@
+.container-centro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.btn-semchamado{
+    background-color: var(--Secundaria);
+    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.196);
+}
+.container-tabela{
+    background-color: #fffefe ;
+    border-radius: 5px;
+    box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.196);
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+
+}
+.btn-tabela{
+    padding: 0;
+    margin-left: 5px;
+}
+.tabela-link i:hover{
+    color: black;
+}

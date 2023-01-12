@@ -32,10 +32,8 @@ export default function Registro() {
     return(
         <div>
             <header>
-                <div className="row" id="header">
-                    <div id="logo-container">                      
-                        <h1 className='display-1'>Gerenciador de chamados</h1>
-                    </div>
+                <div id="header">                   
+                    <h1>Gerenciador de chamados</h1>
                 </div>
             </header>
             <main className="container col-11 col-md-9" id='form-container'>

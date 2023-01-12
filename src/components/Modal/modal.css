@@ -1,0 +1,11 @@
+.btn-modal{
+    font-size: x-large;
+    margin: 0px;
+    padding: 0px;
+}
+.btn-modal i{
+    font-size: larger;
+}
+.modal-footer{
+    padding: 0;
+}

@@ -8,7 +8,7 @@
         object-fit: cover;
         height: 150px;
         width: 150px;
-        box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.196);
+        box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.196);
     }
     .navbar .fluid-container, .navbar-expand-lg .navbar-collapse, .navbar-expand-lg .navbar-nav {
         font-size: larger;
@@ -38,7 +38,6 @@
         align-items: center;
         justify-content: center;
     }
-    
 }
 /*.contente é a classe do container do title*/
 .content{
@@ -53,7 +52,7 @@
 }
 .navbar{
     background-color: var(--Primaria);
-    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.196);
+    box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.196);
 }
 
 .navbar-light .navbar-nav .nav-item{

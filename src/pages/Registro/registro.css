@@ -1,12 +1,6 @@
-#header{
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-#logo-container{
-    display: flex;
-    justify-content: center;
-}
+#header h1{
+    padding: 0;
+ }
 /*Problema relacionado ao logo de login que ficava deslocando conforma passava o mouse*/
 #logo-login{
     vertical-align: super;

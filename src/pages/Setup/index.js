@@ -50,7 +50,6 @@ export default function Setup(){
             await getDownloadURL(ref(storage, `images/${uid}/${imageAvatar.name}`))
             .then(async(url)=>{
                 let urlFoto = url;
-                setLoading(false)
 
 
             const docRef= doc(db, "users", user.uid)
@@ -66,6 +65,7 @@ export default function Setup(){
                 };
                 setUser(data);
                 storageUser(data);
+                setLoading(false)
                 toast.success('Imagem atualizada!')
             })
         })
@@ -100,13 +100,9 @@ export default function Setup(){
         
         <div>
             <Header/>
-
-            <div>
-                <Title name='Meu Perfil'>
-                <i className="bi bi-gear-fill"></i>
-                </Title>
-            </div>
-            
+            <Title name='Meu Perfil'>
+            <i className="bi bi-gear-fill"></i>
+            </Title>
             <div className='content'>
                 <div className='container-fluid container-perfil'>
                     <form className='form-profile' onSubmit={handleSave}>
@@ -125,7 +121,7 @@ export default function Setup(){
                             <span className="input-group-text" id="basic-addon1"><i className="bi bi-filetype-aac"></i></span>
                             <input 
                             type="text" 
-                            className="form-control border-0" 
+                            className="form-control border-0 input-config" 
                             placeholder="Digite seu nome"
                             value={nome}
                             onChange={(e) => setNome(e.target.value)}
@@ -137,7 +133,7 @@ export default function Setup(){
                             <input 
                             type="text" 
                             disabled="disabled"
-                            className="form-control" 
+                            className="form-control input-config" 
                             placeholder="Digite seu e-mail" 
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -148,7 +144,7 @@ export default function Setup(){
                 </div>
             </div>
             <div className='content'>
-                <div className='container-fluid container-sair'><button onClick={ () => deslog() } className='btn-sm btn-dark btn-home' id="btn-sair" >Sair</button></div>
+                <div className='container-fluid container-sair shadow-lg'><button onClick={ () => deslog() } className='btn-sm btn-dark btn-home' id="btn-sair" >Sair</button></div>
             </div>
             
         </div>

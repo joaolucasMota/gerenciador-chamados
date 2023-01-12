@@ -23,17 +23,17 @@ export default function Header(){
                             <ul className="navbar-nav">
                                 <Link to='/dashboard'>
                                     <li className="nav-item">
-                                        <span className="nav-link text-dark" aria-current="page"><i className="bi bi-house-fill"></i> Chamados</span>
+                                        <span className="nav-link text-dark" aria-current="page"><i className="bi bi-house-fill text-dark"></i> Chamados</span>
                                     </li>
                                 </Link>
                                 <Link to='/clientes'>
                                     <li className="nav-item">
-                                        <span className="nav-link text-dark" aria-current="page"><i className="bi bi-people-fill"></i> Clientes</span>
+                                        <span className="nav-link text-dark link-header" aria-current="page"><i className="bi bi-people-fill text-dark"></i> Clientes</span>
                                     </li>
                                 </Link>
                                 <Link to='/setup'>
                                     <li className="nav-item">
-                                        <span className="nav-link text-dark" aria-current="page"><i className="bi bi-gear-fill"></i> Configurações</span>
+                                        <span className="nav-link text-dark" aria-current="page"><i className="bi bi-gear-fill text-dark"></i> Configurações</span>
                                     </li>
                                 </Link>
                             </ul>
