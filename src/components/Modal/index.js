@@ -25,8 +25,8 @@ export default function Modal({conteudo}){
                                     <p className='paragrafo'>{conteudo.nota}</p>
                                     </>
                                 )}
-                                <div className='modal-footer'>
-                                <Link className='btn btn-modal' to={`/new/${conteudo.id}`}> <i className="bi bi-pencil-square text-dark"></i> </Link>
+                                <div className='modal-footer ' >
+                                <Link className='btn btn-modal'  to={`/new/${conteudo.id}`}> <i data-bs-dismiss="modal" className="bi bi-pencil-square text-dark"></i> </Link>
                                 </div>
                             </div>
                         </div>

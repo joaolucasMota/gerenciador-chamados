@@ -14,7 +14,7 @@ import Modal from '../../components/Modal';
 export default function Dashboard(){
 
 
-    const {user,deslog} = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
 
     const[chamados, setChamados] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -61,6 +61,7 @@ export default function Dashboard(){
 
     function modalEdit(item){
         setDetail(item)
+        console.log(item)
     }
 
 

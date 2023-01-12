@@ -3,7 +3,7 @@ import Title from "../../components/Title";
 import Header from "../../components/Header";
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../contexts/auth";
-import { collection, onSnapshot, addDoc, query, where } from "firebase/firestore";
+import { collection, onSnapshot, addDoc, query, where, doc, updateDoc, DocumentSnapshot } from "firebase/firestore";
 import { db } from "../../services/firebaseConnection";
 import { toast } from "react-toastify";
 import { useNavigate, useParams } from 'react-router-dom';
@@ -12,7 +12,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 export default function New(){
 
     const{id} = useParams();
-    const {navigate} = useNavigate();
+    const navigate = useNavigate();
 
     const{user}=useContext(AuthContext);
 
@@ -23,6 +23,8 @@ export default function New(){
     const [assunto, setAssunto] = useState('Selecione o assunto...');
     const [status, setStatus] = useState('Aberto');
     const [nota, setNota] = useState('');
+
+    const [idCliente, setIdCliente] = useState(false);
 
     useEffect(()=>{
         async function loadCliente(){
@@ -56,12 +58,46 @@ export default function New(){
     },[])
     
     async function loadId(lista){
-        
+        const docRef = doc(db, "chamados", id)
+        await onSnapshot( docRef, (snapshot)=>{
+            setAssunto(snapshot.data().assunto);
+            setStatus(snapshot.data().status);
+            setNota(snapshot.data().nota); 
+
+            let index = lista.findIndex(item => item.id === snapshot.data().clienteId)
+            setClienteSelected(index);
+            setIdCliente(true);
+        })
     }
+
 
 
     async function handleRegister(e){
         e.preventDefault();
+
+        if(idCliente){
+            const docRef = doc(db, "chamados", id)
+            await updateDoc(docRef, {
+                cliente: cliente[clienteSelected].nomeFantasia,
+                clienteId:cliente[clienteSelected].id,
+                assunto: assunto,
+                status: status,
+                nota: nota,
+                userId: user.uid
+            })
+            .then(()=>{
+                toast.success('Chamado editado com sucesso');
+                setNota('');
+                setClienteSelected(0);
+                navigate('/dashboard')
+            })
+            .catch((error)=>{
+                toast.error('Erro ao atualizar chamado');
+                console.log(error)
+            })
+            return;
+        }
+
         await addDoc(collection(db, "chamados"),{
             created: new Date(),
             cliente: cliente[clienteSelected].nomeFantasia,
@@ -86,7 +122,6 @@ export default function New(){
 
     function handleChangeSelect(e){
         setAssunto(e.target.value)
-        console.log(e)
     }
 
     function handleOptionChange(e){
