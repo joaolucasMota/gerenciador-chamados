@@ -1,7 +1,7 @@
 <h1>Greeniador de chamados</h1>
 
 
-<p>Este projeto se trata de um gerenciador de chamados, nele você deve criar um usuário e senha para pode adentrar no sistema, a aplicação possui rotas privadas então o usúario não consegue acessra a pagina de login caso estiver logado por exemplo. Para criar um chamado o usuário deve cadastrar um cliente e então após este cadastro o cliente ficara disponivel na lista para criar um chamado. O chamado é criado com status default "Aberto", porém após a criação do chamado isso pode ser editado. O susario logado tem também a opção de adicionar uma foto de perfil. O projeto foi desenvolvido com a utilização do React, Firebase e Bootstrap.</p>
+<p>Este projeto se trata de um gerenciador de chamados, possui autenticação de login via Firebase, rotas privadas com Router Dom, deve ser cadastrado um cliente para que ele seja adicionado a lista de clientes e ai então poderá ser aberto um chamado.</p>
 
 <img src="https://i.imgur.com/eZY2LJF.png">
 
