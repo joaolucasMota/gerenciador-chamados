@@ -5,7 +5,7 @@
 <br><br>
 <img src="https://i.imgur.com/eZY2LJF.png">
 <br>
-<h2>Tecnologias utilizadas</h2>
+<h2>Tecnologias utilizadas
 <li>React
 <li>Firebase
 <li>Bootstrap
